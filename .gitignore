@@ -1,0 +1,37 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+
+# Файлы .env
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Visual Studio Code
+.vscode/
+
+# PyCharm
+.idea/
+*.iml
+
+# Логи
+*.log
+logs/
+
+# Временные файлы
+*.tmp
+
+# Конфиденциальные данные
+secrets.json
+*.key
+*.pem
