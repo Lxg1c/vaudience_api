@@ -6,6 +6,11 @@ BASE_DIR = Path(__file__).parent.parent
 BASE_PATH = BASE_DIR / "db.sqlite3"
 
 
+class AutJWT(BaseModel):
+    private_key_path: Path = BASE_DIR / "certs" / "jwt-private.pem"
+    public_key_path: Path = BASE_DIR / "certs" / "jwt-public.pem"
+    algorithm: str = "RS256"
+
 class DBSettings(BaseModel):
     url: str = f"sqlite+aiosqlite:///{BASE_PATH}"
     echo: bool = False
@@ -14,6 +19,7 @@ class DBSettings(BaseModel):
 class Settings(BaseSettings):
     api_v1_prefix: str = "/api/v1"
     db: DBSettings = DBSettings()
+    auth_jwt: AutJWT = AutJWT()
 
 
 settings = Settings()
